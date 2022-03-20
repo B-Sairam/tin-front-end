@@ -11,7 +11,7 @@ import io from "socket.io-client"
 import { BASE_URL } from '../constant';
 
 
-const ENDPOINT = "https://mern-tin-chat.herokuapp.com/";
+const ENDPOINT = "https://mern-tin-chat.herokuapp.com";
 var socket , selectedChatCompare;
 
  const SingleChat = ({fetchAgain,setFetchAgain}) => {
