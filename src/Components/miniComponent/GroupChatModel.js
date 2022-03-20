@@ -16,7 +16,7 @@ const GroupChatModel = ({children}) => {
     const [loading,setLoading]=useState(false)
    const toast = useToast();
 
-   const {user,setSelectedChat,Chats,setChats} = ChatState();
+   const {user,Chats,setChats} = ChatState();
     
    const handleSearch= async (query)=>{
      setSearch(query)

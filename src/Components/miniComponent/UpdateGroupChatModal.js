@@ -1,5 +1,5 @@
 import { ViewIcon } from '@chakra-ui/icons'
-import { Button,Text, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, Image, useToast, Box, FormControl, Input, Spinner } from '@chakra-ui/react'
+import { Button, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, useToast, Box, FormControl, Input, Spinner } from '@chakra-ui/react'
 import axios from 'axios';
 import React, { useState } from 'react'
 import { BASE_URL } from '../../constant';

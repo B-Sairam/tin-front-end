@@ -30,6 +30,7 @@ var socket , selectedChatCompare;
             socket.on('connected',()=> setSocketConnected(true))
             socket.on('typing',()=>setIsTyping(true))
             socket.on('stop typing',()=>setIsTyping(false))
+            // eslint-disable-next-line react-hooks/exhaustive-deps
         },[]);
     const toast = useToast()
     const fetchMessage = async()=>{
@@ -63,7 +64,7 @@ var socket , selectedChatCompare;
         fetchMessage() ;
         selectedChatCompare = selectedChat;
         console.log(notification)
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[selectedChat]);
 
     useEffect(()=>{
