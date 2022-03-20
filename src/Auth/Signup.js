@@ -4,6 +4,7 @@ import axios from 'axios'
 import { BASE_URL } from '../constant';
 
 import { useNavigate } from 'react-router-dom';
+import {useToast } from '@chakra-ui/react';
 function Signup() {
   let navigate = useNavigate()
   const [name,setName]=useState('');
@@ -12,15 +13,27 @@ function Signup() {
   const [re_pasword,setRe_password]=useState('')
   const [pic,setPic]=useState();
   const [loading,setLoading]=useState(false);
-
+  const toast = useToast();
   const submitHandler=async()=>{
     setLoading(true)
     if(!name||!email||!password||!re_pasword){
-      alert('Please fill all Fields')
+      toast({
+        title:"Fill all the Fields",
+        status:"warning",
+        duration:3000,
+        isClosable:true,
+        position:"top"
+    });
       setLoading(false)
     }
     if(password!==re_pasword){
-      alert('password does not Match')
+      toast({
+        title:"Password does not match",
+        status:"warning",
+        duration:3000,
+        isClosable:true,
+        position:"top"
+    });
     }
     try {
       const config = {
@@ -30,7 +43,13 @@ function Signup() {
       }
 
       const {data}= await axios.post(`${BASE_URL}api/user`,{name,email,password,pic},config);
-      alert('registed successfully')
+      toast({
+        title:"Registered successfully",
+        status:"warning",
+        duration:3000,
+        isClosable:true,
+        position:"top"
+    });
       localStorage.setItem('userInfo',JSON.stringify(data));
       setLoading(false)
       navigate('/chats')
@@ -80,10 +99,10 @@ function Signup() {
      </div>
        <label  class="form-label mt-1">Create Password</label>
       <input type="text" placeholder='Password'  class="form-control"onChange={(e)=>setPassword(e.target.value)}  required/>
-      <label for="inputPassword5" class="form-label mt-1">Confirm Password</label>
+      <label for="inputPassword5" className="form-label mt-1">Confirm Password</label>
       <input type="text" placeholder='Re-enter Password'  class="form-control"onChange={(e)=>setRe_password(e.target.value)}  required/>
       <div class="mb-3">
-        <label for="formFile" class="form-label">Set Profile Image</label>
+        <label for="formFile" className="form-label">Set Profile Image</label>
         <input class="form-control" type="file" onChange={(e)=>postDetails(e.target.files[0])} id="formFile"/>
       </div>
       <div className='d-grid gap-2 col-6 mx-auto mt-4'>

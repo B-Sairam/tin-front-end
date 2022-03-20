@@ -71,13 +71,13 @@ const loginHandler=async()=>{
         <label className="form-label">User Email</label>
          <input type="email" className="form-control"onChange={(e)=>setEmail(e.target.value)} placeholder="Your Name"/>
      </div>
-       <label class="form-label">Password</label>
-       <div class="input-group mb-3">
-          <input type={showPass?"text":"password"} class="form-control"onChange={(e)=>setPassword(e.target.value)} placeholder="Password"/>
+       <label className="form-label">Password</label>
+       <div className="input-group mb-3">
+          <input type={showPass?"text":"password"} className="form-control"onChange={(e)=>setPassword(e.target.value)} placeholder="Password"/>
         </div>
-        <div class="form-check">
-        <input class="form-check-input" type="checkbox" onClick={()=>hidepassword()} id="flexCheckDefault"/>
-        <label class="form-check-label" for="flexCheckDefault">
+        <div className="form-check">
+        <input className="form-check-input" type="checkbox" onClick={()=>hidepassword()} id="flexCheckDefault"/>
+        <label className="form-check-label" for="flexCheckDefault">
           Show Password
       </label>
    </div>

@@ -16,7 +16,7 @@ function SideDrawe() {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const navigate = useNavigate()
-    const {user,setSelectedChat,Chats,setChats,notification,setNotification} = ChatState();
+    const {user,selectedChat,setSelectedChat,Chats,setChats,notification,setNotification} = ChatState();
     const [search,setSearch]=useState('');
     const [searchResult,setSearchResult]=useState([])
     const [loading,setLoading]=useState(false);
@@ -91,11 +91,11 @@ function SideDrawe() {
     
   return <div>
      <Box
-     d="flex"
+     d={selectedChat ? {base:"none",md:"flex"}:"flex"}
      justifyContent="space-between"
      alignItems="center"
      w="100%"
-     p={{base:"15px 10px 15px 10px",md:"9px 10px 9px 10px"}}
+     p={{base:"10px 10px 10px 10px",md:"9px 10px 9px 10px"}}
      bg="#031630"
 
      >

@@ -15,7 +15,7 @@ function ChatPage() {
   },[])
   return<div style={{width:"100%"}}>
    {user &&<SideDrawe/>}
-  <Box d="flex" justifyContent="space-between" w="100%" h="90.7vh"  > 
+  <Box d="flex" justifyContent="space-between" w="100%" h="100vh"  > 
   {user && (
   <Mychat fetchAgain={fetchAgain}/>
    )}

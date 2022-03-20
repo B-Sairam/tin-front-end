@@ -50,7 +50,7 @@
 .send{
     color:#1e3453 ;
     font-size: 20px;
-    position:fixed;
+    position:absolute;
     bottom: 2.2%;
     right: 4%;
     padding: 2px 8px;
@@ -72,6 +72,6 @@
 @media screen and (max-width: 480px) {
     .send{
         bottom: 1.7%;
-    right: 8%;
+        right: 8%;
     }
   }

@@ -97,6 +97,7 @@ var socket , selectedChatCompare;
                  chatId:selectedChat._id,
              },config)
             socket.emit('new message',data)
+    
              setMessage([...message,data])
            } catch (error) {
             toast({

@@ -112,9 +112,9 @@ const handleSubmit = async()=>{
     <span onClick={onOpen} >{children}</span>
      <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent w={{base:"270px",md:"350px"}}>
           <ModalHeader
-          fontSize="35px"
+          fontSize="25px"
           fontFamily="work sans"
           d="flex"
           justifyContent="center"
@@ -170,7 +170,11 @@ const handleSubmit = async()=>{
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' 
+            <Button bg="#1e3453" color="white"
+            _hover={{
+              background:"#1e3453",
+              color:"white",
+          }}
             onClick={()=>handleSubmit()
             }
             >
