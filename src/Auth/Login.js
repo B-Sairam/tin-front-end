@@ -69,7 +69,7 @@ const loginHandler=async()=>{
       </div>
       <div className="mb-3">
         <label className="form-label">User Email</label>
-         <input type="email" className="form-control"onChange={(e)=>setEmail(e.target.value)} placeholder="Your Name"/>
+         <input type="email" className="form-control"onChange={(e)=>setEmail(e.target.value)} placeholder="Your Email"/>
      </div>
        <label className="form-label">Password</label>
        <div className="input-group mb-3">
