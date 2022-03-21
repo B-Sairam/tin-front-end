@@ -45,7 +45,7 @@ function Signup() {
       const {data}= await axios.post(`${BASE_URL}api/user`,{name,email,password,pic},config);
       toast({
         title:"Registered successfully",
-        status:"warning",
+        status:"success",
         duration:3000,
         isClosable:true,
         position:"top"
