@@ -30,7 +30,7 @@ const loginHandler=async()=>{
   if(!email||!password){
     setAlertbg(false)
     handleVisible()
-    setMessage('Ellataium Fill pannuga da')
+    setMessage('Ellataium Fill pannuga')
     setLoading(false)
     // return;
   }else{
@@ -51,7 +51,7 @@ const loginHandler=async()=>{
     } catch (error) {
       setAlertbg(false)
       handleVisible()
-      setMessage('Ollunga Passwordaium emailaium poodugada')
+      setMessage('Ollunga Passwordaium emailaium pooduga')
       setLoading(false)
     }
   }
