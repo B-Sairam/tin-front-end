@@ -30,7 +30,7 @@ const loginHandler=async()=>{
   if(!email||!password){
     setAlertbg(false)
     handleVisible()
-    setMessage('Fill all the Field')
+    setMessage('Ellataium Fill pannuga da')
     setLoading(false)
     // return;
   }else{
@@ -51,7 +51,7 @@ const loginHandler=async()=>{
     } catch (error) {
       setAlertbg(false)
       handleVisible()
-      setMessage('Invalide email and password')
+      setMessage('Ollunga Passwordaium emailaium poodugada')
       setLoading(false)
     }
   }
