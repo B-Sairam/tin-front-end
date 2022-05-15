@@ -69,17 +69,21 @@ const loginHandler=async()=>{
       </div>
       <div className="mb-3">
         <label className="form-label">User Email</label>
-         <input type="email" className="form-control"onChange={(e)=>setEmail(e.target.value)} placeholder="Your Email"/>
+         <input type="email" value={email} className="form-control"onChange={(e)=>setEmail(e.target.value)} placeholder="Your Email"/>
      </div>
        <label className="form-label">Password</label>
        <div className="input-group mb-3">
-          <input type={showPass?"text":"password"} className="form-control"onChange={(e)=>setPassword(e.target.value)} placeholder="Password"/>
+          <input type={showPass?"text":"password"} value={password} className="form-control"onChange={(e)=>setPassword(e.target.value)} placeholder="Password"/>
         </div>
-        <div className="form-check">
+        <div className="form-check d-flex flexDirection-row">
         <input className="form-check-input" type="checkbox" onClick={()=>hidepassword()} id="flexCheckDefault"/>
-        <label className="form-check-label" for="flexCheckDefault">
+       &nbsp;&nbsp; <label className="form-check-label" for="flexCheckDefault">
           Show Password
       </label>
+     <p style={{cursor:"pointer",paddingLeft:"100px"}} className="text-primary" onClick={()=>{
+        setEmail("demo@gmail.com");
+        setPassword("123")
+      }}>Demo Account</p>
    </div>
       <div className='d-grid gap-2 col-6 mx-auto mt-4'>
       <Button
