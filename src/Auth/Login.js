@@ -3,10 +3,12 @@ import { Alert, Button } from 'react-bootstrap';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../constant';
+import { ChatState } from '../Context/ChatProvider';
 
 
 function Login() {
   const navigate = useNavigate()
+  const {setUser} = ChatState();
   const [email,setEmail]=useState('');
   const [password,setPassword]=useState('')
   const [showPass,setShowPass]=useState(false);
@@ -46,6 +48,8 @@ const loginHandler=async()=>{
       handleVisible()
       setMessage('successfully SignIn')
       localStorage.setItem('userInfo',JSON.stringify(data));
+      const cus = JSON.parse(localStorage.getItem("userInfo"));
+      setUser(cus)
       setLoading(false)
       navigate('/chats')
     } catch (error) {
@@ -69,17 +73,21 @@ const loginHandler=async()=>{
       </div>
       <div className="mb-3">
         <label className="form-label">User Email</label>
-         <input type="email" className="form-control"onChange={(e)=>setEmail(e.target.value)} placeholder="Your Name"/>
+         <input type="email" value={email} className="form-control"onChange={(e)=>setEmail(e.target.value)} placeholder="Your Name"/>
      </div>
        <label className="form-label">Password</label>
        <div className="input-group mb-3">
-          <input type={showPass?"text":"password"} className="form-control"onChange={(e)=>setPassword(e.target.value)} placeholder="Password"/>
+          <input type={showPass?"text":"password"} value={password} className="form-control"onChange={(e)=>setPassword(e.target.value)} placeholder="Password"/>
         </div>
-        <div className="form-check">
+        <div className="form-check d-flex flexDirection-row">
         <input className="form-check-input" type="checkbox" onClick={()=>hidepassword()} id="flexCheckDefault"/>
         <label className="form-check-label" for="flexCheckDefault">
-          Show Password
+        &nbsp; Show Password
       </label>
+      <p style={{cursor:"pointer",paddingLeft:"90px"}} className="text-primary" onClick={()=>{
+        setEmail("demo@gmail.com");
+        setPassword("123")
+      }}>Demo Account</p>
    </div>
       <div className='d-grid gap-2 col-6 mx-auto mt-4'>
       <Button

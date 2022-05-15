@@ -58,6 +58,7 @@
 }
 .input{
     width: 100%;
+    padding-left:5px;
     padding: 8px;
     border-radius: 20px;
     border: none;

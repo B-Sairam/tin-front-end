@@ -8,23 +8,28 @@ import ChatBox from './ChatBox';
 import Mychat from './Mychat';
 
 function ChatPage() {
-  const {user} = ChatState();
+  const {user,Chats} = ChatState();
   const [fetchAgain,setFetchAgain] = useState(false)
   useEffect(()=>{
-    setFetchAgain(true)
+    setFetchAgain(true) 
   },[])
-  return<div style={{width:"100%"}}>
-   {user &&<SideDrawe/>}
-  <Box d="flex" justifyContent="space-between" w="100%" h={{base:"100vh", md:"90.7vh"}}  > 
-  {user && (
-  <Mychat fetchAgain={fetchAgain}/>
-   )}
-  {user && <ChatBox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} /> }
-
-
-  </Box>
-
-  </div>
+  console.log(Chats);
+  return<>{
+    user? <div style={{width:"100%"}}>
+    {user &&<SideDrawe/>}
+   <Box d="flex" justifyContent="space-between" w="100%" h={{base:"100vh", md:"90.7vh"}}  > 
+   {user && (
+   <Mychat fetchAgain={fetchAgain}/>
+    )}
+   {user && <ChatBox fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} /> }
+ 
+ 
+   </Box>
+ 
+   </div>:"loading"
+  }
+ 
+  </>
 }
 
 export default ChatPage
