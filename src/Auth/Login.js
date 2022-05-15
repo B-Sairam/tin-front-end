@@ -81,10 +81,10 @@ const loginHandler=async()=>{
         </div>
         <div className="form-check d-flex flexDirection-row">
         <input className="form-check-input" type="checkbox" onClick={()=>hidepassword()} id="flexCheckDefault"/>
-       &nbsp;&nbsp; <label className="form-check-label" for="flexCheckDefault">
+       &nbsp;<label className="form-check-label" for="flexCheckDefault">
           Show Password
       </label>
-     <p style={{cursor:"pointer",paddingLeft:"100px"}} className="text-primary" onClick={()=>{
+     <p style={{cursor:"pointer",paddingLeft:"90px"}} className="text-primary" onClick={()=>{
         setEmail("demo@gmail.com");
         setPassword("123")
       }}>Demo Account</p>
