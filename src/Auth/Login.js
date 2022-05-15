@@ -32,7 +32,7 @@ const loginHandler=async()=>{
   if(!email||!password){
     setAlertbg(false)
     handleVisible()
-    setMessage('Fill all the Field')
+    setMessage('Fill all the requirements')
     setLoading(false)
     // return;
   }else{
@@ -55,7 +55,7 @@ const loginHandler=async()=>{
     } catch (error) {
       setAlertbg(false)
       handleVisible()
-      setMessage('Invalide email and password')
+      setMessage('Password and email not correct!')
       setLoading(false)
     }
   }
@@ -66,14 +66,14 @@ const loginHandler=async()=>{
   
   return <div>
 
-      <div className='alert'>
+<div className='alert'>
       <Alert show={visibleAlert} variant={alertbg?"success":"danger"}>
            {message}
       </Alert>
       </div>
       <div className="mb-3">
         <label className="form-label">User Email</label>
-         <input type="email" value={email} className="form-control"onChange={(e)=>setEmail(e.target.value)} placeholder="Your Name"/>
+         <input type="email" value={email} className="form-control"onChange={(e)=>setEmail(e.target.value)} placeholder="Your Email"/>
      </div>
        <label className="form-label">Password</label>
        <div className="input-group mb-3">
@@ -81,10 +81,10 @@ const loginHandler=async()=>{
         </div>
         <div className="form-check d-flex flexDirection-row">
         <input className="form-check-input" type="checkbox" onClick={()=>hidepassword()} id="flexCheckDefault"/>
-        <label className="form-check-label" for="flexCheckDefault">
-        &nbsp; Show Password
+       &nbsp;&nbsp; <label className="form-check-label" for="flexCheckDefault">
+          Show Password
       </label>
-      <p style={{cursor:"pointer",paddingLeft:"90px"}} className="text-primary" onClick={()=>{
+     <p style={{cursor:"pointer",paddingLeft:"100px"}} className="text-primary" onClick={()=>{
         setEmail("demo@gmail.com");
         setPassword("123")
       }}>Demo Account</p>

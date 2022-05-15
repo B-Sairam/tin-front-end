@@ -105,7 +105,7 @@ function SideDrawe() {
              
              </Button>
          </Tooltip>
-         <Text fontSize="3xl" ml={2} color="white" fontFamily="monospace">tin!</Text>
+         <Text fontSize="3xl" ml={2} color="white" fontFamily="monospace">bin!</Text>
          <div>
              <Menu>
                  <MenuButton p={1} pr={6}>

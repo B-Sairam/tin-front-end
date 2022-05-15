@@ -21,7 +21,7 @@ function HomePage() {
   return (
     <div className='main'>
        <div className='title'>
-         tin!
+         bin!
         </div>
      <div className='auth-page col-6'>
        
